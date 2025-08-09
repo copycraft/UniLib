@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "unilib",
+  "version": "${version}",
+  "name": "UniLib",
+  "description": "A mod that adds a lot of utilites for tabletop game mods.",
+  "authors": [
+    "Copicraft"
+  ],
+  "contact": {
+    "homepage": "github.com/copycraft/tabletoplib"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/unilib/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.copicraftDev.unilib.fabric.UnilibFabric"
+    ],
+    "client": [
+      "com.copicraftDev.unilib.fabric.client.UnilibFabricClient"
+    ]
+  },
+  "mixins": [
+    "unilib.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
