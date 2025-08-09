@@ -1,5 +1,5 @@
-[10:44:30] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.17.2
-[10:44:30] [main/INFO] (FabricLoader) Loading 57 mods:
+[19:20:13] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.17.2
+[19:20:13] [main/INFO] (FabricLoader) Loading 57 mods:
 	- architectury 13.0.8
 	- fabric-api 0.116.5+1.21.1
 	- fabric-api-base 0.4.42+6573ed8c19
@@ -52,31 +52,117 @@
 	- fabric-transfer-api-v1 5.4.3+c24bd99419
 	- fabric-transitive-access-wideners-v1 6.2.0+45b9699719
 	- fabricloader 0.17.2
-	- generated_5254dec 1.0.0
+	- generated_5c264b2 1.0.0
 	- java 21
 	- minecraft 1.21.1
 	- mixinextras 0.5.0
 	- unilib 0.1-ALPHA
-[10:44:30] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/copi/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.3+mixin.0.8.7/3e535042688d1265447e52ad86950b7d9678a5fa/sponge-mixin-0.16.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[10:44:30] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[10:44:30] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[10:44:30] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
-[10:44:31] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
-[10:44:31] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 141 milliseconds
-[10:44:33] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[10:44:33] [Render thread/INFO] (Minecraft) Setting user: Player174
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Initialized with MOD_ID: unilib
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: test
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [BLOCK] Registered: test (Display: test)
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: testitem
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [ITEM] Registered: testitem (Display: testitem)
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: Wheel Of Doom
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [BLOCK] Registered: wheel_of_doom (Display: Wheel Of Doom)
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: wasistdas
-[10:44:34] [Render thread/ERROR] (Minecraft) No data fixer registered for wasistdas
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [ENTITY] Registered: wasistdas (Display: wasistdas)
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: example_block_entity
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [BLOCK ENTITY] Registered: example_block_entity (Display: example_block_entity)
-[10:44:34] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[10:44:34] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
-[10:44:34] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib/Fabric] Runtime resource pack registered
+[19:20:13] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/copi/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.3+mixin.0.8.7/3e535042688d1265447e52ad86950b7d9678a5fa/sponge-mixin-0.16.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[19:20:13] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[19:20:14] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[19:20:14] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[19:20:14] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[19:20:14] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 159 milliseconds
+[19:20:17] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:20:17] [Render thread/INFO] (Minecraft) Setting user: Player368
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Initialized mod with ID: unilib
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: test
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [BLOCK] Registered: test (Display: test)
+[19:20:17] [Render thread/INFO] (Minecraft) [STDERR]: [UnilibClientHooks] ERROR: instance not initialized!
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: testitem
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [ITEM] Registered: testitem (Display: testitem)
+[19:20:17] [Render thread/INFO] (Minecraft) [STDERR]: [UnilibClientHooks] ERROR: instance not initialized!
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Adding: Wheel Of Doom
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] [BLOCK] Registered: wheel_of_doom (Display: Wheel Of Doom)
+[19:20:17] [Render thread/INFO] (Minecraft) [STDERR]: [UnilibClientHooks] ERROR: instance not initialized!
+[19:20:17] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
+[19:20:17] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[19:20:17] [Render thread/INFO] (Minecraft) [STDOUT]: [Unilib] Generated block 'secretname' at: /home/copi/IdeaProjects/UniLib/fabric/run/resourcepacks/UnilibGenerated
+[19:20:17] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
+[19:20:17] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
+[19:20:17] [Worker-Main-3/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
+[19:20:18] [Worker-Main-2/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
+[19:20:18] [Worker-Main-2/WARN] (Minecraft) Exception loading blockstate definition: 'unilib:blockstates/test.json' missing model for variant: 'unilib:test#'
+[19:20:18] [Worker-Main-2/WARN] (Minecraft) Exception loading blockstate definition: 'unilib:blockstates/wheel_of_doom.json' missing model for variant: 'unilib:wheel_of_doom#'
+[19:20:18] [Worker-Main-2/WARN] (Minecraft) Unable to load model: 'unilib:item/test' referenced from: unilib:item/test: java.io.FileNotFoundException: unilib:models/item/test.json
+[19:20:18] [Worker-Main-2/WARN] (Minecraft) Unable to load model: 'unilib:item/testitem' referenced from: unilib:item/testitem: java.io.FileNotFoundException: unilib:models/item/testitem.json
+[19:20:18] [Worker-Main-2/WARN] (Minecraft) Unable to load model: 'unilib:item/wheel_of_doom' referenced from: unilib:item/wheel_of_doom: java.io.FileNotFoundException: unilib:models/item/wheel_of_doom.json
+[19:20:18] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[19:20:18] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[19:20:18] [Render thread/INFO] (Minecraft) OpenAL initialized on device Scarlett Solo USB Headphones / Line 1-2
+[19:20:18] [Render thread/INFO] (Minecraft) Sound engine started
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[19:20:18] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[19:20:18] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[19:21:00] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
+[19:21:00] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
+[19:21:00] [Worker-Main-11/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
+[19:21:00] [Worker-Main-6/WARN] (Minecraft) Exception loading blockstate definition: 'unilib:blockstates/test.json' missing model for variant: 'unilib:test#'
+[19:21:00] [Worker-Main-6/WARN] (Minecraft) Exception loading blockstate definition: 'unilib:blockstates/wheel_of_doom.json' missing model for variant: 'unilib:wheel_of_doom#'
+[19:21:00] [Worker-Main-6/WARN] (Minecraft) Unable to load model: 'unilib:item/test' referenced from: unilib:item/test: java.io.FileNotFoundException: unilib:models/item/test.json
+[19:21:00] [Worker-Main-6/WARN] (Minecraft) Unable to load model: 'unilib:item/testitem' referenced from: unilib:item/testitem: java.io.FileNotFoundException: unilib:models/item/testitem.json
+[19:21:00] [Worker-Main-6/WARN] (Minecraft) Unable to load model: 'unilib:item/wheel_of_doom' referenced from: unilib:item/wheel_of_doom: java.io.FileNotFoundException: unilib:models/item/wheel_of_doom.json
+[19:21:00] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[19:21:00] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[19:21:00] [Render thread/INFO] (Minecraft) OpenAL initialized on device Scarlett Solo USB Headphones / Line 1-2
+[19:21:00] [Render thread/INFO] (Minecraft) Sound engine started
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[19:21:00] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[19:21:00] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[19:21:06] [Render thread/INFO] (Minecraft) Loaded 1290 recipes
+[19:21:06] [Render thread/INFO] (Minecraft) Loaded 1399 advancements
+[19:21:06] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 589.8 μs
+[19:21:06] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.1
+[19:21:06] [Server thread/INFO] (Minecraft) Generating keypair
+[19:21:07] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[19:21:07] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:21:07] [Render thread/INFO] (Minecraft) Time elapsed: 167 ms
+[19:21:07] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[19:21:07] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[19:21:08] [Server thread/INFO] (Minecraft) Player368[local:E:557410b7] logged in with entity id 100 at (-193.56791615239197, 72.4358361298854, 205.55313488012683)
+[19:21:08] [Server thread/INFO] (Minecraft) Player368 joined the game
+[19:21:08] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[19:21:14] [Server thread/INFO] (Minecraft) [Player368: Gave 1 [block.unilib.wheel_of_doom] to Player368]
+[19:21:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Gave 1 [block.unilib.wheel_of_doom] to Player368
+[19:21:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[19:21:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19:21:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19:21:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:21:31] [Server thread/INFO] (Minecraft) Player368 lost connection: Disconnected
+[19:21:31] [Server thread/INFO] (Minecraft) Player368 left the game
+[19:21:31] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[19:21:31] [Server thread/INFO] (Minecraft) Stopping server
+[19:21:31] [Server thread/INFO] (Minecraft) Saving players
+[19:21:31] [Server thread/INFO] (Minecraft) Saving worlds
+[19:21:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19:21:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19:21:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:21:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
+[19:21:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:21:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:21:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[19:21:31] [Render thread/INFO] (Minecraft) Stopping!
