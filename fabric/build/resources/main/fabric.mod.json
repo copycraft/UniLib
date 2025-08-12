@@ -11,7 +11,7 @@
     "homepage": "github.com/copycraft/tabletoplib"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/unilib/icon.png",
+  "icon": "assets/unilib/logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [

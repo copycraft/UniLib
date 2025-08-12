@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "com/copicraftDev/unilib/mixin/PackScreenMixin": {
+      "loadPackIcon(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/server/packs/repository/Pack;)Lnet/minecraft/resources/ResourceLocation;": "Lnet/minecraft/class_5375;method_30289(Lnet/minecraft/class_1060;Lnet/minecraft/class_3288;)Lnet/minecraft/class_2960;"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "com/copicraftDev/unilib/mixin/PackScreenMixin": {
+        "loadPackIcon(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/server/packs/repository/Pack;)Lnet/minecraft/resources/ResourceLocation;": "Lnet/minecraft/class_5375;method_30289(Lnet/minecraft/class_1060;Lnet/minecraft/class_3288;)Lnet/minecraft/class_2960;"
+      }
+    }
+  }
+}
