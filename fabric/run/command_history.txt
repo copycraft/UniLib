@@ -4,3 +4,4 @@
 /summon unilib:wasistdas
 /give Player368 unilib:wheel_of_doom
 /give Player912 unilib:secretname
+/give Player145 unilib:secretitem

@@ -115,15 +115,15 @@
 [Architectury Transformer DEBUG]  - /home/copi/IdeaProjects/UniLib-master/.gradle/loom-cache/remapped_mods/loom_mappings_1_21_1_layered_hash_40545_v2/net/fabricmc/fabric-api/fabric-resource-loader-v0/1.3.1+5b5275af19/fabric-resource-loader-v0-1.3.1+5b5275af19.jar
 [Architectury Transformer DEBUG]  - /home/copi/IdeaProjects/UniLib-master/.gradle/loom-cache/remapped_mods/loom_mappings_1_21_1_layered_hash_40545_v2/net/fabricmc/fabric-api/fabric-sound-api-v1/1.0.23+6573ed8c19/fabric-sound-api-v1-1.0.23+6573ed8c19.jar
 [Architectury Transformer DEBUG]  - /home/copi/IdeaProjects/UniLib-master/.gradle/loom-cache/remapped_mods/loom_mappings_1_21_1_layered_hash_40545_v2/net/fabricmc/fabric-api/fabric-transitive-access-wideners-v1/6.2.0+45b9699719/fabric-transitive-access-wideners-v1-6.2.0+45b9699719.jar
-[Architectury Transformer] Read classpath in 740.2 ms
+[Architectury Transformer] Read classpath in 761.8 ms
 [Architectury Transformer DEBUG] Closed File Systems for /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar to /tmp/9899687520247432718.jar: 
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar to /tmp/4225574262884345890.jar: 
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@262b2c86
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@371a67ec
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@5ed828d
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@50d0686
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@7a3d45bd
-[Architectury Transformer DEBUG] Transforming from /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar to /tmp/9899687520247432718.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming from /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar to /tmp/4225574262884345890.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/resource/TexturePackMain with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/enums/UnilibBlockStates with maxs=true frames=true
@@ -143,45 +143,45 @@
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/client/RuntimeResourcePack with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/Unilib with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /unilib.mixins.json is a mixin config.
-[Architectury Transformer DEBUG] Closed File Systems for /tmp/9899687520247432718.jar
+[Architectury Transformer DEBUG] Closed File Systems for /tmp/4225574262884345890.jar
 [Architectury Transformer] Listening at /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [/tmp/9899687520247432718.jar] contains packages: com.copicraftDev.unilib.api, com.copicraftDev.unilib.types.custom, com.copicraftDev.unilib.utils, com.copicraftDev.unilib.resource, com.copicraftDev.unilib.types, com.copicraftDev.unilib.enums, com.copicraftDev.unilib, com.copicraftDev.unilib.client, com.copicraftDev.unilib.types.custom.examples
+[Architectury Transformer DEBUG] Temporary jar [/tmp/4225574262884345890.jar] contains packages: com.copicraftDev.unilib.api, com.copicraftDev.unilib.types.custom, com.copicraftDev.unilib.utils, com.copicraftDev.unilib.resource, com.copicraftDev.unilib.types, com.copicraftDev.unilib.enums, com.copicraftDev.unilib, com.copicraftDev.unilib.client, com.copicraftDev.unilib.types.custom.examples
 [Architectury Transformer DEBUG] Closed File Systems for /home/copi/IdeaProjects/UniLib-master/common/build/devlibs/UniLib-common-0.1-ALPHA-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [/home/copi/IdeaProjects/UniLib-master/fabric/build/classes/java/main] contains packages: com.copicraftDev.unilib.fabric, com.copicraftDev.unilib.fabric.client
 [Architectury Transformer DEBUG] Classpath entry [/home/copi/IdeaProjects/UniLib-master/fabric/build/resources/main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/Unilib.class to com/copicraftDev/unilib/Unilib.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/Unilib with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/Unilib in 1.082 ms
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/Unilib in 1.135 ms
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/types/UnilibTypes.class to com/copicraftDev/unilib/types/UnilibTypes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/types/UnilibTypes with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/UnilibTypes in 794.8 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/UnilibTypes in 668.1 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/types/Type.class to com/copicraftDev/unilib/types/Type.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/types/Type with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/Type in 389.4 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/Type in 434.4 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/types/UnilibTypeAction.class to com/copicraftDev/unilib/types/UnilibTypeAction.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/types/UnilibTypeAction with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/UnilibTypeAction in 206.8 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/UnilibTypeAction in 107.3 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/enums/UnilibBlockModels.class to com/copicraftDev/unilib/enums/UnilibBlockModels.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/enums/UnilibBlockModels with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/enums/UnilibBlockModels in 328.8 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/enums/UnilibBlockModels in 285.4 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/enums/UnilibBlockStates.class to com/copicraftDev/unilib/enums/UnilibBlockStates.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/enums/UnilibBlockStates with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/enums/UnilibBlockStates in 224.0 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/enums/UnilibBlockStates in 228.7 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/types/custom/UnilibBlock.class to com/copicraftDev/unilib/types/custom/UnilibBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/types/custom/UnilibBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/custom/UnilibBlock in 462.1 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/custom/UnilibBlock in 462.5 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/utils/NameFormatter.class to com/copicraftDev/unilib/utils/NameFormatter.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/utils/NameFormatter with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/utils/NameFormatter in 296.7 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/utils/NameFormatter in 329.7 μs
 [Architectury Transformer DEBUG] Transforming from com/copicraftDev/unilib/types/custom/UnilibItem.class to com/copicraftDev/unilib/types/custom/UnilibItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/copicraftDev/unilib/types/custom/UnilibItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/custom/UnilibItem in 375.8 μs
+[Architectury Transformer DEBUG] Transformed com/copicraftDev/unilib/types/custom/UnilibItem in 378.8 μs
