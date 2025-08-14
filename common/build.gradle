@@ -14,12 +14,6 @@ dependencies {
     // which get remapped to the correct annotations on each platform.
     // Do NOT use other classes from Fabric Loader.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
-
-    modImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
-    // Also include core and annotations if needed
-    modImplementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
-    modImplementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
-
     modImplementation "maven.modrinth:liby:1.21.1-build-2.1.1"
     // Liby dependency
     implementation "org.reflections:reflections:0.10.2"

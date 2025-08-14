@@ -4,6 +4,8 @@ import com.copicraftDev.unilib.Unilib;
 import com.copicraftDev.unilib.enums.UnilibBlockModels;
 import com.copicraftDev.unilib.enums.UnilibBlockStates;
 import com.copicraftDev.unilib.types.custom.*;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
@@ -38,11 +40,28 @@ public class UnilibTypes {
     }
 
     public static Type NETWORK_INBOUND(String name) {
-        // Assuming UnilibNetwork methods don't require Unilib instance
         return new Type(name, UnilibNetwork::addInboundListener);
     }
 
     public static Type NETWORK_OUTBOUND(String name) {
         return new Type(name, UnilibNetwork::addOutboundSender);
+    }
+
+    // ---------------- NEW TYPES ----------------
+
+    /** Registers a particle type for a specific location */
+    public static Type PARTICLE(String name, ParticleOptions particle, Location location) {
+        return new Type(name, n -> UnilibParticles.addParticle(n, particle, location));
+    }
+
+    /** Registers a chat message type for a specific location */
+    public static Type CHAT(String message, Location location) {
+        return new Type(message, n -> UnilibChat.addChatType(n, location));
+    }
+
+
+    public static Type EVENT(UnilibEvent event) {
+        // The Type still needs a name for your add(Type) system
+        return new Type(event.getName(), n -> UnilibEvents.addEventListener(event));
     }
 }

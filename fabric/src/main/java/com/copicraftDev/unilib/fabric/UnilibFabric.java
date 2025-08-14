@@ -6,6 +6,7 @@ import com.copicraftDev.unilib.enums.UnilibBlockStates;
 import com.copicraftDev.unilib.fabric.client.UnilibClientHooks;
 import com.copicraftDev.unilib.fabric.client.UnilibFabricClient;
 import com.copicraftDev.unilib.types.UnilibTypes;
+import com.copicraftDev.unilib.types.custom.examples.GreetPlayerEvent;
 import net.fabricmc.api.ModInitializer;
 
 public final class UnilibFabric implements ModInitializer {
@@ -22,6 +23,7 @@ public final class UnilibFabric implements ModInitializer {
         unilib.add(UnilibTypes.ITEM("secretitem"));
         unilib.add(UnilibTypes.NETWORK_OUTBOUND("a"));
         unilib.add(UnilibTypes.NETWORK_INBOUND("a"));
+        unilib.add(UnilibTypes.EVENT(new GreetPlayerEvent()));
     }
 
     public static Unilib getInstance() {

@@ -13,6 +13,8 @@ public class Unilib {
 
     private final String modId;
 
+    public static final String UNI_LIB_MOD_ID = "unilib";
+
     private final DeferredRegister<Block> blocks;
     private final DeferredRegister<Item> items;
     private final DeferredRegister<EntityType<?>> entities;
