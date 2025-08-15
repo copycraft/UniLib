@@ -26,10 +26,10 @@ jobs:
           server-id: github
           settings-path: ${{ github.workspace }}
 
-      - name: Setup Gradle 8.5
+      - name: Setup Gradle 8.12
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.5'
+          gradle-version: '8.12'
 
       - name: Set Gradle user home inside workspace
         run: echo "ORG_GRADLE_PROJECT_gradle_user_home=${{ github.workspace }}/.gradle" >> $GITHUB_ENV
