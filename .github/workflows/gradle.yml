@@ -30,7 +30,7 @@ jobs:
 
       - name: Build with Gradle
         run: gradle build
-        working-directory: UniLib   # <-- Correct folder
+        # No working-directory needed, build.gradle is at repo root
 
   dependency-submission:
 
@@ -57,4 +57,4 @@ jobs:
         uses: gradle/actions/dependency-submission@v4
         with:
           gradle-version: '8.9'
-          build-root-directory: UniLib   # <-- Correct folder
+          build-root-directory: .   # <-- repo root

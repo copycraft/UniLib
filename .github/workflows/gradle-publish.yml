@@ -30,11 +30,11 @@ jobs:
 
       - name: Build with Gradle
         run: gradle build
-        working-directory: UniLib   # <-- Correct folder
+        # working-directory removed, runs at repo root
 
       - name: Publish to GitHub Packages
         run: gradle publish
-        working-directory: UniLib   # <-- Correct folder
+        # working-directory removed, runs at repo root
         env:
           USERNAME: ${{ github.actor }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
