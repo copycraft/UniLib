@@ -1,6 +1,7 @@
 package com.copicraftDev.unilib.animation.targets;
 
 import com.copicraftDev.unilib.animation.AnimationContext;
+import com.copicraftDev.unilib.animation.timeline.UnilibTimeline;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 
@@ -16,7 +17,7 @@ public class UnilibBlockTarget extends UnilibAnimationTarget {
 
     @Override
     public void apply(AnimationContext context, float delta) {
-        // Example: could animate particles or FX at the block
+        // Example: animate FX or particles at the block
     }
 
     public BlockPos getPos() {

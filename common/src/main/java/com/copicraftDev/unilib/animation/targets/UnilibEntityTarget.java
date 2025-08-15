@@ -13,9 +13,8 @@ public class UnilibEntityTarget extends UnilibAnimationTarget {
 
     @Override
     public void apply(AnimationContext context, float delta) {
-        // Example: could apply position, rotation, or FX to the entity
         if (entity != null && !entity.isRemoved()) {
-            // animation logic here
+            // Example: apply position/rotation/FX updates
         }
     }
 

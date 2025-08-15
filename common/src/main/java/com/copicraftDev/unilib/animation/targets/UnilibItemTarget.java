@@ -3,9 +3,6 @@ package com.copicraftDev.unilib.animation.targets;
 import com.copicraftDev.unilib.animation.AnimationContext;
 import net.minecraft.world.item.ItemStack;
 
-/**
- * Target animations at items in hand or world.
- */
 public class UnilibItemTarget extends UnilibAnimationTarget {
 
     private final ItemStack itemStack;
@@ -16,7 +13,7 @@ public class UnilibItemTarget extends UnilibAnimationTarget {
 
     @Override
     public void apply(AnimationContext context, float delta) {
-        // item transform or FX logic
+        // Example: item transform or FX logic
     }
 
     public ItemStack getItemStack() {

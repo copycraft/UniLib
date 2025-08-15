@@ -12,7 +12,7 @@ public class UnilibBoneTarget extends UnilibAnimationTarget {
 
     @Override
     public void apply(AnimationContext context, float delta) {
-        // bone-specific transform logic here
+        // bone-specific transform logic
     }
 
     public String getBoneName() {

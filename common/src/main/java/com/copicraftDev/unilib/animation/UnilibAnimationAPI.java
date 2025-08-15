@@ -1,10 +1,11 @@
 package com.copicraftDev.unilib.animation;
 
 import com.copicraftDev.unilib.animation.types.UnilibAnimation;
+import com.copicraftDev.unilib.animation.targets.UnilibAnimationTarget;
 import com.copicraftDev.unilib.animation.timeline.UnilibTimeline;
 
 /**
- * Public Unilib animation API.
+ * Public entry point for Unilib animations and timelines.
  */
 public class UnilibAnimationAPI {
 
@@ -17,6 +18,8 @@ public class UnilibAnimationAPI {
     public static UnilibAnimationAPI getInstance() {
         return INSTANCE;
     }
+
+    // ------------------ Animation control ------------------
 
     /** Play an animation on a context */
     public void play(UnilibAnimation anim, AnimationContext context) {
@@ -43,24 +46,21 @@ public class UnilibAnimationAPI {
         return manager.getRegistry();
     }
 
-    // ---------- Timeline convenience methods ----------
+    // ------------------ Timeline helpers ------------------
 
-    /** Create a new timeline */
-    public UnilibTimeline createTimeline() {
-        return new UnilibTimeline();
+    /** Create a new timeline for a given target */
+    public UnilibTimeline createTimeline(UnilibAnimationTarget target) {
+        return new UnilibTimeline(target);
     }
 
-    /** Play a timeline with a target animation (wrapper) */
-    public void playTimeline(UnilibTimeline timeline, UnilibAnimation targetAnim, AnimationContext context) {
-        targetAnim.onStart(context);
-        // You could optionally store timelines inside targetAnim and tick them automatically
-        // For example:
-        // targetAnim.addTimeline(timeline);
-        manager.playAnimation(targetAnim, context);
+    /** Sample a timeline (tick its internal state) */
+    public void sampleTimeline(UnilibTimeline timeline, float delta) {
+        timeline.sample(delta);
     }
 
-    /** Sample a timeline at a given time */
-    public float sampleTimeline(UnilibTimeline timeline, float time) {
-        return timeline.sample(time);
+    /** Attach a timeline to an animation and play it */
+    public void playTimeline(UnilibTimeline timeline, UnilibAnimation anim, AnimationContext context) {
+        anim.addTimeline(timeline);
+        play(anim, context);
     }
 }

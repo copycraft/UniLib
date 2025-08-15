@@ -1,6 +1,11 @@
 package com.copicraftDev.unilib.animation.types;
 
 import com.copicraftDev.unilib.animation.AnimationContext;
+import com.copicraftDev.unilib.animation.timeline.UnilibTimeline;
+import com.copicraftDev.unilib.animation.triggers.UnilibTriggers;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class UnilibAnimation {
 
@@ -11,19 +16,34 @@ public abstract class UnilibAnimation {
     protected float speed = 1.0f;
     protected boolean loop = false;
 
-    public void onStart(AnimationContext context) {
-        // override in subclasses
+    private final List<UnilibTimeline> timelines = new ArrayList<>();
+    private UnilibTriggers triggers;
+
+    public void setTriggers(UnilibTriggers triggers) {
+        this.triggers = triggers;
     }
+
+    public void addTimeline(UnilibTimeline timeline) {
+        timelines.add(timeline);
+    }
+
+    public void removeTimeline(UnilibTimeline timeline) {
+        timelines.remove(timeline);
+    }
+
+    public List<UnilibTimeline> getTimelines() {
+        return timelines;
+    }
+
+    public boolean isDone() { return done; }
+
+    protected void markDone() { this.done = true; }
+
+    public void onStart(AnimationContext context) {}
 
     public abstract void update(AnimationContext context, float delta);
 
-    public void onEnd(AnimationContext context) {
-        // override in subclasses
-    }
-
-    public boolean isDone() {
-        return done;
-    }
+    public void onEnd(AnimationContext context) {}
 
     public final void tick(AnimationContext context, float delta) {
         if (!started) {
@@ -33,6 +53,18 @@ public abstract class UnilibAnimation {
 
         if (!done) {
             update(context, delta * speed);
+
+            // Tick all timelines
+            for (UnilibTimeline timeline : timelines) {
+                timeline.sample(delta * speed);
+
+                // Fire timeline triggers if any
+                if (triggers != null) {
+                    timeline.getFiredMarkers().forEach(marker ->
+                            triggers.fire(marker, timeline.getTarget())
+                    );
+                }
+            }
         }
 
         if (isDone() && !ended) {
@@ -40,21 +72,11 @@ public abstract class UnilibAnimation {
             onEnd(context);
 
             if (loop) {
-                // reset state for looping
                 started = false;
                 ended = false;
                 done = false;
+                timelines.forEach(UnilibTimeline::reset);
             }
         }
     }
-
-    protected void markDone() {
-        this.done = true;
-    }
-
-    public void setSpeed(float speed) { this.speed = speed; }
-    public float getSpeed() { return speed; }
-
-    public void setLoop(boolean loop) { this.loop = loop; }
-    public boolean isLooping() { return loop; }
 }
