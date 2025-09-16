@@ -20,10 +20,7 @@ public final class UnilibFabric implements ModInitializer {
 
         unilib.init();
         unilib.add(UnilibTypes.BLOCK("secretname"));
-        unilib.add(UnilibTypes.ITEM("secretitem"));
-        unilib.add(UnilibTypes.NETWORK_OUTBOUND("a"));
-        unilib.add(UnilibTypes.NETWORK_INBOUND("a"));
-        unilib.add(UnilibTypes.EVENT(new GreetPlayerEvent()));
+        unilib.add(UnilibTypes.ITEM("secretitem", SecretItemClass.class));
     }
 
     public static Unilib getInstance() {

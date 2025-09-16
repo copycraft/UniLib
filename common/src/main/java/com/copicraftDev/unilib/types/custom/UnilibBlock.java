@@ -9,34 +9,37 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class UnilibBlock {
 
-    /**
-     * Registers a block and its item under the given Unilib instance's registries.
-     *
-     * @param unilib The Unilib instance owning the registration.
-     * @param rawName The display/raw name (e.g. "Wheel Of Doom").
-     */
+    // ---------------- Default block ----------------
     public static void addBlock(Unilib unilib, String rawName) {
+        addBlock(unilib, rawName, Block.class);
+    }
+
+    // ---------------- Optional custom block class ----------------
+    public static <T extends Block> void addBlock(Unilib unilib, String rawName, Class<T> blockClass) {
         String id = NameFormatter.toId(rawName);            // e.g. "wheel_of_doom"
         String display = NameFormatter.toLang(rawName);     // e.g. "Wheel Of Doom"
 
-        // Register block via Unilib instance
-        var block = unilib.getBlocks().register(id, () ->
-                new Block(BlockBehaviour.Properties.of())
-        );
+        var block = unilib.getBlocks().register(id, () -> {
+            try {
+                return blockClass.getConstructor(BlockBehaviour.Properties.class)
+                        .newInstance(BlockBehaviour.Properties.of());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return new Block(BlockBehaviour.Properties.of());
+            }
+        });
 
-        // Register block item via Unilib instance
-        unilib.getItems().register(id, () ->
-                new BlockItem(block.get(), new Item.Properties())
-        );
+        // Register block item automatically
+        unilib.getItems().register(id, () -> new BlockItem(block.get(), new Item.Properties()));
 
         System.out.println("[Unilib] [BLOCK] Registered: " + id + " (Display: " + display + ")");
 
-        // Reflective client hook call stays the same (can be static)
+        // Call client hook if present
         try {
             Class<?> hooks = Class.forName("com.copicraftDev.unilib.fabric.client.UnilibClientHooks");
             hooks.getMethod("onBlockRegistered", String.class).invoke(null, id);
         } catch (ClassNotFoundException ignored) {
-            // Not running client or no client module, ignore
+            // Not running client, ignore
         } catch (NoSuchMethodException | IllegalAccessException | java.lang.reflect.InvocationTargetException e) {
             e.printStackTrace();
         }
