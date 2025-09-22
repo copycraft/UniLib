@@ -15,7 +15,7 @@ public final class UnilibFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        UnilibClientHooks.init(UnilibFabricClient.MOD_ID);
+        UnilibClientHooks.init(UnilibFabricClient.MOD_ID); //you dont need this
         unilib = new Unilib("unilib");
 
         unilib.init();

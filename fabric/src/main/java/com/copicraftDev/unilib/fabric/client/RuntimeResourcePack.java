@@ -62,7 +62,7 @@ public final class RuntimeResourcePack {
         }
 
         try {
-            ResourceLocation id = ResourceLocation.fromNamespaceAndPath(container.getMetadata().getId(), idInsideMod);
+            ResourceLocation id = ResourceLocation.tryBuild(container.getMetadata().getId(), idInsideMod);
             return ResourceManagerHelper.registerBuiltinResourcePack(id, container, activationType);
         } catch (Throwable t) {
             t.printStackTrace();

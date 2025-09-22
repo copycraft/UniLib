@@ -23,7 +23,7 @@ public abstract class PackScreenMixin {
             CallbackInfoReturnable<ResourceLocation> cir
     ) {
         if ("file/UnilibGenerated".equals(resourcePackProfile.getId())) {
-            cir.setReturnValue( ResourceLocation.fromNamespaceAndPath("unilib", "logo.png"));
+            cir.setReturnValue( ResourceLocation.tryBuild("unilib", "logo.png"));
             cir.cancel();
         }
     }
