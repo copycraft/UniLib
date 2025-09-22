@@ -1,13 +1,12 @@
 package com.copicraftDev.unilib.fabric.client;
 
+import com.copicraftDev.unilib.fabric.client.model.Model;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-/**
- * High-level API for generating packs/models/blockstates at runtime.
- */
 public final class ResourcePackManager {
     private static final String PACK_NAME = "UnilibGenerated";
     private static Path packRoot;
@@ -25,7 +24,6 @@ public final class ResourcePackManager {
         }
     }
 
-    /** ensure packRoot and directories exist (lazy init) */
     private static synchronized void ensureInit(String modId) {
         if (packRoot == null) init(modId);
         try {
@@ -44,20 +42,14 @@ public final class ResourcePackManager {
         System.out.println("[Unilib] Writing block model JSON: " + modelPath);
         Model model = modelType.buildModelFor(modId, name);
         Files.writeString(modelPath, model.toJsonString(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        System.out.println("[Unilib] Wrote block model JSON.");
 
         String blockstate = stateType.buildBlockstateJson(modId, name);
         Path statePath = packRoot.resolve("assets/" + modId + "/blockstates/" + name + ".json");
-        System.out.println("[Unilib] Writing blockstate JSON: " + statePath);
         Files.writeString(statePath, blockstate, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        System.out.println("[Unilib] Wrote blockstate JSON.");
 
-        // Also generate the item model for the block item
         Path itemModelPath = packRoot.resolve("assets/" + modId + "/models/item/" + name + ".json");
-        System.out.println("[Unilib] Writing block item model JSON: " + itemModelPath);
         String itemJson = ResourcepackItemModelType.BLOCK_PARENT.buildItemModelJson(modId, name);
         Files.writeString(itemModelPath, itemJson, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        System.out.println("[Unilib] Wrote block item model JSON.");
     }
 
     public static void generateItem(String modId, String name, ResourcepackItemModelType itemModelType) throws IOException {
@@ -65,8 +57,37 @@ public final class ResourcePackManager {
         Path itemModelPath = packRoot.resolve("assets/" + modId + "/models/item/" + name + ".json");
         String json = itemModelType.buildItemModelJson(modId, name);
         Files.writeString(itemModelPath, json, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+    }
 
-        System.out.println("[Unilib] Generated item model for '" + name + "' (" + itemModelType + ")");
+    // ---------------- NEW METHODS FOR CUSTOM MODELS ----------------
+
+    public static void generateBlockFromModel(String modId, String name, Model model, ResourcepackBlockstates stateType) throws IOException {
+        ensureInit(modId);
+
+        // Write block model JSON
+        Path modelPath = packRoot.resolve("assets/" + modId + "/models/block/" + name + ".json");
+        Files.writeString(modelPath, model.toJsonString(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+        // Write blockstate JSON
+        Path statePath = packRoot.resolve("assets/" + modId + "/blockstates/" + name + ".json");
+        String blockstate = stateType.buildBlockstateJson(modId, name);
+        Files.writeString(statePath, blockstate, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+        // Write block item model JSON
+        Path itemModelPath = packRoot.resolve("assets/" + modId + "/models/item/" + name + ".json");
+        String itemJson = ResourcepackItemModelType.BLOCK_PARENT.buildItemModelJson(modId, name);
+        Files.writeString(itemModelPath, itemJson, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+        System.out.println("[Unilib] Generated block from custom model: " + name);
+    }
+
+    public static void generateItemFromModel(String modId, String name, Model model) throws IOException {
+        ensureInit(modId);
+
+        Path itemModelPath = packRoot.resolve("assets/" + modId + "/models/item/" + name + ".json");
+        Files.writeString(itemModelPath, model.toJsonString(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+        System.out.println("[Unilib] Generated item from custom model: " + name);
     }
 
     public static void registerCleanupOnExit() {

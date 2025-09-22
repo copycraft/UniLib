@@ -1,5 +1,7 @@
 package com.copicraftDev.unilib.fabric.client;
 
+import com.copicraftDev.unilib.fabric.client.model.Model;
+
 public enum ResourcepackModelType {
     FULL {
         @Override

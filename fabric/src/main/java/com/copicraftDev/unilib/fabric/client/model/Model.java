@@ -1,11 +1,10 @@
-package com.copicraftDev.unilib.fabric.client;
+package com.copicraftDev.unilib.fabric.client.model;
+
+import com.copicraftDev.unilib.types.custom.UnilibModel;
 
 import java.util.*;
 
-/**
- * Lightweight model builder + JSON serializer (no external libs).
- */
-public final class Model {
+public final class Model implements UnilibModel {
     private String parent = null;
     private final Map<String, String> textures = new LinkedHashMap<>();
     private final List<Element> elements = new ArrayList<>();
@@ -22,12 +21,15 @@ public final class Model {
         elements.add(e);
     }
 
+    public List<Element> getElements() {
+        return elements;
+    }
+
     public String toJsonString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");
-        if (parent != null) {
-            sb.append("  \"parent\": \"").append(escape(parent)).append("\",\n");
-        }
+        if (parent != null) sb.append("  \"parent\": \"").append(escape(parent)).append("\",\n");
+
         if (!textures.isEmpty()) {
             sb.append("  \"textures\": {\n");
             int i = 0;
@@ -39,6 +41,7 @@ public final class Model {
             sb.append("  }");
             if (!elements.isEmpty()) sb.append(",\n"); else sb.append("\n");
         }
+
         if (!elements.isEmpty()) {
             sb.append("  \"elements\": [\n");
             for (int i = 0; i < elements.size(); i++) {
@@ -56,6 +59,7 @@ public final class Model {
         return s.replace("\\", "\\\\").replace("\"", "\\\"");
     }
 
+    // ---------- Element ----------
     public static final class Element {
         private final float[] from = new float[3];
         private final float[] to = new float[3];
@@ -79,6 +83,10 @@ public final class Model {
             putFace("down", new Face(texturePath));
         }
 
+        public float[] getFrom() { return from; }
+        public float[] getTo() { return to; }
+        public Map<String, Face> getFaces() { return faces; }
+
         public String toJsonString(String indent) {
             StringBuilder sb = new StringBuilder();
             sb.append(indent).append("{\n");
@@ -91,8 +99,7 @@ public final class Model {
                 if (++i < faces.size()) sb.append(",");
                 sb.append("\n");
             }
-            sb.append(indent).append("  }\n");
-            sb.append(indent).append("}");
+            sb.append(indent).append("  }\n").append(indent).append("}");
             return sb.toString();
         }
 
@@ -102,15 +109,13 @@ public final class Model {
         }
     }
 
+    // ---------- Face ----------
     public static final class Face {
         private final String texture;
         private final Integer rotation;
         private final float[] uv;
 
-        public Face(String texture) {
-            this(texture, null, null);
-        }
-
+        public Face(String texture) { this(texture, null, null); }
         public Face(String texture, Integer rotation, float[] uv) {
             this.texture = texture;
             this.rotation = rotation;
@@ -129,13 +134,7 @@ public final class Model {
             return sb.toString();
         }
 
-        private static String escape(String s) {
-            return s.replace("\\", "\\\\").replace("\"", "\\\"");
-        }
-
-        private static String trimFloat(float v) {
-            if (v == (long) v) return String.format("%d", (long) v);
-            return Float.toString(v);
-        }
+        private static String escape(String s) { return s.replace("\\", "\\\\").replace("\"", "\\\""); }
+        private static String trimFloat(float v) { if (v == (long) v) return String.format("%d", (long) v); return Float.toString(v); }
     }
 }

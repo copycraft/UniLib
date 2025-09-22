@@ -1,12 +1,22 @@
 package com.copicraftDev.unilib.fabric.client;
 
-import java.io.IOException;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
+import com.copicraftDev.unilib.fabric.client.model.Model;
+import com.copicraftDev.unilib.types.custom.UnilibModel;
+import com.copicraftDev.unilib.types.custom.UnilibModelRegistry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+
+/**
+ * Handles client-side hooks for Unilib:
+ * - Automatic generation of block/item JSON models
+ * - Blockstates
+ * - Logging
+ */
 public final class UnilibClientHooks {
 
     private static final Logger LOGGER = LogManager.getLogger(UnilibClientHooks.class);
@@ -15,14 +25,16 @@ public final class UnilibClientHooks {
 
     private final String modId;
 
-    public UnilibClientHooks(String modId) {
+    private UnilibClientHooks(String modId) {
         this.modId = Objects.requireNonNull(modId, "modId");
+
         synchronized (UnilibClientHooks.class) {
             if (INSTANCE == null) {
                 INSTANCE = this;
                 LOGGER.info("Initialized UnilibClientHooks for mod '{}'.", modId);
             } else if (!INSTANCE.modId.equals(modId)) {
-                LOGGER.warn("Attempted to create a second UnilibClientHooks for mod '{}', existing mod='{}'.", modId, INSTANCE.modId);
+                LOGGER.warn("Attempted to create a second UnilibClientHooks for mod '{}', existing mod='{}'.",
+                        modId, INSTANCE.modId);
             }
         }
     }
@@ -60,9 +72,29 @@ public final class UnilibClientHooks {
     private void handleBlockRegisteredAsync(String id) {
         CompletableFuture.runAsync(() -> {
             try {
-                ResourcePackManager.generateBlock(modId, id, ResourcepackModelType.FULL, ResourcepackBlockstates.SINGLE);
+                UnilibModel model = null;
+
+                // check for a registered custom block model
+                if (UnilibModelRegistry.getBlockModels().containsKey(id)) {
+                    model = UnilibModelRegistry.getBlockModels().get(id).apply(id);
+                    LOGGER.info("Using custom block model for '{}'.", id);
+                }
+
+                if (model instanceof Model m) {
+                    // write JSON for the custom client Model
+                    ResourcePackManager.generateBlockFromModel(modId, id, m, ResourcepackBlockstates.SINGLE);
+                } else {
+                    // fallback to default generated model
+                    ResourcePackManager.generateBlock(modId, id,
+                            ResourcepackModelType.FULL,
+                            ResourcepackBlockstates.SINGLE);
+                }
+
+                // always generate block item model
                 ResourcePackManager.generateItem(modId, id, ResourcepackItemModelType.BLOCK_PARENT);
+
                 LOGGER.info("Resource generation finished for block '{}'.", id);
+
             } catch (IOException e) {
                 LOGGER.error("Failed to generate resources for block '" + id + "'", e);
             }
@@ -72,8 +104,24 @@ public final class UnilibClientHooks {
     private void handleItemRegisteredAsync(String id) {
         CompletableFuture.runAsync(() -> {
             try {
-                ResourcePackManager.generateItem(modId, id, ResourcepackItemModelType.GENERATED);
+                UnilibModel model = null;
+
+                // check for a registered custom item model
+                if (UnilibModelRegistry.getItemModels().containsKey(id)) {
+                    model = UnilibModelRegistry.getItemModels().get(id).apply(id);
+                    LOGGER.info("Using custom item model for '{}'.", id);
+                }
+
+                if (model instanceof Model m) {
+                    // write JSON for custom item model (block parent not needed here)
+                    ResourcePackManager.generateItemFromModel(modId, id, m);
+                } else {
+                    // fallback
+                    ResourcePackManager.generateItem(modId, id, ResourcepackItemModelType.GENERATED);
+                }
+
                 LOGGER.info("Resource generation finished for item '{}'.", id);
+
             } catch (IOException e) {
                 LOGGER.error("Failed to generate resources for item '" + id + "'", e);
             }
